@@ -1,0 +1,11 @@
+Solution found!
+[LLLL]
+[RLLR]
+[RLLL]
+[RRLR]
+[RRLL]
+[RRRR]
+5 Moves
+Nodes expanded: 15
+Nodes unexpanded: 0
+
