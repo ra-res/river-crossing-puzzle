@@ -1,13 +1,5 @@
-// This class implements the state space representation of the corn, goose and fox problem. 
-// Please write comments where appropriate on the state space, initial state, goal state, operations and transition functions. 
 package Solution;
 import java.util.ArrayList;
-
-/*
-      Instances of the class GameState represent states that can arise in the sliding block puzzle.
-      The char array board represents the locations (L or R) of Corn, Goose, Fox, and Farmer respectively. 
-      INITIAL_BOARD and GOAL_BOARD are constant arrays holding the initial and goal states (board configurations).
- */
 
 public class GameState {
     final char[] board;
@@ -15,18 +7,12 @@ public class GameState {
     static final char[] INITIAL_BOARD = {'L','L','L','L'};
     static final char[] GOAL_BOARD = {'R','R','R','R'};
     static final int BOARD_SIZE = 4;
-    
-    /*
-        GameState is a constructor that takes a char array holding a board configuration as argument.
-     */
+
     public GameState(char[] board) {
         this.board = board;
         this.farmerPlace = board[BOARD_SIZE-1];
     }
 
-    /*
-        clone returns a new GameState with the same board configuration as the current GameState.
-     */
     public GameState clone() {
         char[] clonedBoard = new char[BOARD_SIZE];
         System.arraycopy(this.board, 0, clonedBoard, 0, BOARD_SIZE);
@@ -37,9 +23,6 @@ public class GameState {
         return farmerPlace;
     }
 
-    /*
-        toString returns the board configuration of the current GameState as a printable string.
-    */
     public String toString() {
         String s = "[";
         for (char c : this.board) s = s + c;
