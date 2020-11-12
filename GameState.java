@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class GameState {
     final char[] board;
-    private char farmerPlace; //not really necessary. the same as board[BOARD_SIZE-1]
+    private char farmerPlace;
     static final char[] INITIAL_BOARD = {'L','L','L','L'};
     static final char[] GOAL_BOARD = {'R','R','R','R'};
     static final int BOARD_SIZE = 4;
@@ -29,10 +29,6 @@ public class GameState {
         return s + "]";
     }
 
-    /*
-        isGoal returns true if and only if the board configuration of the current GameState is the goal
-        configuration.
-    */
     public boolean isGoal() {
         for (int j = 0; j < BOARD_SIZE; j++) {
             if (this.board[j] != GOAL_BOARD[j]) return false;
@@ -40,10 +36,6 @@ public class GameState {
         return true;
     }
 
-    /*
-         sameBoard returns true if and only if the GameState supplied as argument has the same board
-         configuration as the current GameState.
-     */
     public boolean sameBoard (GameState gs) {
         for (int j = 0; j < BOARD_SIZE; j++) {
             if (this.board[j] != gs.board[j]) return false;
@@ -51,9 +43,6 @@ public class GameState {
         return true;
     }
 
-    /*
-        possibleMoves returns a list of all GameStates that can be reached in a single move from the current GameState.
-     */
     public ArrayList<GameState> possibleMoves() {
         ArrayList<GameState> moves = new ArrayList<GameState>();
         for (int start = 0; start < BOARD_SIZE-1; start++) {
